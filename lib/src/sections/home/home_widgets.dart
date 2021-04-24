@@ -177,10 +177,12 @@ class __HireMeButtonState extends State<_HireMeButton> {
 class HeroImage extends StatelessWidget {
   final Color borderColor;
   final Color backgroundColor;
+  final Color widgetColor;
 
   const HeroImage({
     this.borderColor = Colors.white,
     this.backgroundColor = Colors.transparent,
+    this.widgetColor = Colors.white,
   });
 
   @override

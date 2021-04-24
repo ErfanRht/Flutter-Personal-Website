@@ -12,7 +12,10 @@ class HomeSectionMobile extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            HeroImage(backgroundColor: Colors.teal),
+            HeroImage(
+              backgroundColor: Colors.teal,
+              widgetColor: Colors.teal,
+            ),
             SizedBox(height: 32),
             Introduction(),
           ],
