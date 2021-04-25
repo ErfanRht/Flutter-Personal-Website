@@ -23,7 +23,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/DKB_CV.pdf
+    - assets/resume/
     - assets/images/
 
   fonts:

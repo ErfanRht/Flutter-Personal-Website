@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:personal_web/src/utils/url_helper.dart';
+import 'package:personal_web/models/url_helper.dart';
 
 class MobileNavbar extends StatelessWidget implements PreferredSizeWidget {
   final textStyle = TextStyle(

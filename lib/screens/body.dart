@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:personal_web/src/components/nav_bar.dart';
-import 'package:personal_web/src/sections/about/about.dart';
-import 'package:personal_web/src/sections/home/home.dart';
-import 'package:personal_web/src/sections/skills/skills.dart';
+import 'package:personal_web/shared/nav_bar.dart';
+import 'package:personal_web/screens/about/about.dart';
+import 'package:personal_web/screens/home/home.dart';
+import 'package:personal_web/screens/skills/skills.dart';
 
 class PageBody extends StatefulWidget {
   final int pageIndex;

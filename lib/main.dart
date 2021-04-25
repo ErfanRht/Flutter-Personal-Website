@@ -1,4 +1,4 @@
-import 'package:personal_web/src/components/responsive/layout_wrapper.dart';
+import 'package:personal_web/screens/responsive/layout_wrapper.dart';
 import 'package:flutter/material.dart';
 
 void main() {

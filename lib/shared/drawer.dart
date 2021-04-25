@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:personal_web/src/components/nav_bar.dart';
-import 'package:personal_web/src/utils/url_helper.dart';
+import 'package:personal_web/shared/nav_bar.dart';
+import 'package:personal_web/models/url_helper.dart';
 
 class AppDrawer extends StatefulWidget {
   final int selectedIndex;

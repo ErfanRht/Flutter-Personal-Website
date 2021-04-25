@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:personal_web/src/sections/skills/skills_widgets.dart';
+import 'package:personal_web/screens/skills/skills_widgets.dart';
 
 class SkillsSectionMobile extends StatelessWidget {
   @override

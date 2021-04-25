@@ -1,30 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:personal_web/src/components/typewriter.dart';
+import 'package:personal_web/models/typewriter.dart';
 
-class AboutManImage extends StatelessWidget {
+class SkillsManImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Image.asset('assets/images/man.png');
+    return Padding(
+      padding: const EdgeInsets.only(right: 150),
+      child: Image.asset(
+        'assets/images/skills.png',
+        height: 400,
+      ),
+    );
   }
 }
 
-class AboutContent extends StatefulWidget {
+class SkillsContent extends StatefulWidget {
   final Color color;
   final bool isMobile;
 
-  const AboutContent({this.color = Colors.white, this.isMobile = false});
+  const SkillsContent({this.color = Colors.white, this.isMobile = false});
   @override
-  _AboutContentState createState() => _AboutContentState();
+  _SkillsContentState createState() => _SkillsContentState();
 }
 
-class _AboutContentState extends State<AboutContent>
+class _SkillsContentState extends State<SkillsContent>
     with TickerProviderStateMixin {
-  static bool showAbout = false;
+  static bool showSkills = false;
   static bool showStack1 = false;
   static bool showStack2 = false;
 
   static bool whoSeen = false;
-  static bool aboutSeen = false;
+  static bool skillsSeen = false;
   static bool stack1Seen = false;
   static bool stack2Seen = false;
 
@@ -60,7 +66,7 @@ class _AboutContentState extends State<AboutContent>
             onEnd: () {
               if (mounted) {
                 setState(() {
-                  showAbout = true;
+                  showSkills = true;
                   whoSeen = true;
                 });
               }
@@ -72,13 +78,13 @@ class _AboutContentState extends State<AboutContent>
             margin: const EdgeInsets.only(top: 4, bottom: 16),
             color: widget.color,
           ),
-          if (showAbout)
+          if (showSkills)
             Typewriter(
               "Hello! I'm Erfan Rahmati, A teen software developer.\n\n"
               "I love to create performant and interesting stuff that are beneficial to the community\n"
               "I enjoy learning and exploring new areas in the technologies I work with and even the ones outside my stack.\n\n",
               //"Currently I am working with Dart, Python and Framework languages.",
-              animate: !aboutSeen,
+              animate: !skillsSeen,
               duration: const Duration(seconds: 10),
               textStyle: TextStyle(
                 color: widget.color,
@@ -90,7 +96,7 @@ class _AboutContentState extends State<AboutContent>
                 if (mounted) {
                   setState(() {
                     showStack1 = true;
-                    aboutSeen = true;
+                    skillsSeen = true;
                   });
                 }
               },

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:personal_web/src/sections/skills/skills_widgets.dart';
+import 'package:personal_web/screens/about/about_widgets.dart';
 
-class SkillsSection extends StatefulWidget {
+class AboutSection extends StatefulWidget {
   @override
-  _SkillsSectionState createState() => _SkillsSectionState();
+  _AboutSectionState createState() => _AboutSectionState();
 }
 
-class _SkillsSectionState extends State<SkillsSection> {
+class _AboutSectionState extends State<AboutSection> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -16,12 +16,12 @@ class _SkillsSectionState extends State<SkillsSection> {
           SizedBox(width: 32),
           Expanded(
             flex: 8,
-            child: SkillsManImage(),
+            child: AboutManImage(),
           ),
           SizedBox(width: 36),
           Expanded(
             flex: 6,
-            child: SkillsContent(),
+            child: AboutContent(),
           ),
           Spacer(flex: 2),
         ],

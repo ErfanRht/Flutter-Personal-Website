@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:personal_web/src/components/typewriter.dart';
-import 'package:personal_web/src/utils/url_helper.dart';
+import 'package:personal_web/models/typewriter.dart';
+import 'package:personal_web/models/url_helper.dart';
 
 /// Introductory texts with the Hire Me button as well
 class Introduction extends StatefulWidget {

@@ -1,13 +1,12 @@
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
-
 import 'package:flutter/material.dart';
-import 'package:personal_web/src/body.dart';
-import 'package:personal_web/src/components/drawer.dart';
-import 'package:personal_web/src/components/nav_bar.dart';
-import 'package:personal_web/src/components/social_media_bar.dart';
-import 'package:personal_web/src/sections/about/about_mobile.dart';
-import 'package:personal_web/src/sections/home/home_mobile.dart';
+import 'package:personal_web/screens/body.dart';
+import 'package:personal_web/shared/drawer.dart';
+import 'package:personal_web/shared/nav_bar.dart';
+import 'package:personal_web/shared/social_media_bar.dart';
+import 'package:personal_web/screens/about/about_mobile.dart';
+import 'package:personal_web/screens/home/home_mobile.dart';
 
 class MobilePage extends StatefulWidget {
   final int pageIndex;

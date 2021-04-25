@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:personal_web/src/sections/about/about_widgets.dart';
+import 'package:personal_web/screens/home/home_widgets.dart';
 
-class AboutSection extends StatefulWidget {
-  @override
-  _AboutSectionState createState() => _AboutSectionState();
-}
-
-class _AboutSectionState extends State<AboutSection> {
+class HomeSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -15,13 +10,16 @@ class _AboutSectionState extends State<AboutSection> {
           Spacer(flex: 2),
           SizedBox(width: 32),
           Expanded(
-            flex: 8,
-            child: AboutManImage(),
+            flex: 6,
+            child: Introduction(),
           ),
           SizedBox(width: 36),
           Expanded(
-            flex: 6,
-            child: AboutContent(),
+            flex: 8,
+            child: Padding(
+              padding: EdgeInsets.only(left: 150),
+              child: HeroImage(),
+            ),
           ),
           Spacer(flex: 2),
         ],
