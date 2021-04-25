@@ -201,7 +201,7 @@ class HeroImage extends StatelessWidget {
       // ),
       child: Image.asset(
         'assets/images/me.png',
-        color: Colors.white,
+        color: widgetColor,
       ),
     );
   }

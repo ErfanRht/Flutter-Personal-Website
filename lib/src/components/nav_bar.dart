@@ -119,16 +119,22 @@ class _NavbarState extends State<Navbar> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 CircleAvatar(
-                  backgroundColor: Colors.teal,
-                  radius: 15,
-                  child: Text(
-                    'ER',
-                    style: TextStyle(
+                    backgroundColor: Colors.teal,
+                    radius: 15,
+                    child: Image.asset(
+                      'assets/images/logo.png',
+                      height: 20,
+                      //'web/icons/favicon-32x32',
                       color: Colors.white,
-                      fontWeight: FontWeight.bold,
+                    )
+                    //  Text(
+                    //   'ER',
+                    //   style: TextStyle(
+                    //     color: Colors.white,
+                    //     fontWeight: FontWeight.bold,
+                    //   ),
+                    // ),
                     ),
-                  ),
-                ),
                 SizedBox(width: 8),
                 RichText(
                   textAlign: TextAlign.center,
