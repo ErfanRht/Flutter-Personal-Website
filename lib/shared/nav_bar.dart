@@ -122,7 +122,7 @@ class _NavbarState extends State<Navbar> {
                     backgroundColor: Colors.teal,
                     radius: 15,
                     child: Image.asset(
-                      'assets/images/logo.png',
+                      'assets/images/logo/logo.png',
                       height: 20,
                       //'web/icons/favicon-32x32',
                       color: Colors.white,

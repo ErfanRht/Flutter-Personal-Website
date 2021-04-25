@@ -174,34 +174,59 @@ class __HireMeButtonState extends State<_HireMeButton> {
   }
 }
 
-class HeroImage extends StatelessWidget {
+class HeroImage extends StatefulWidget {
   final Color borderColor;
   final Color backgroundColor;
   final Color widgetColor;
 
-  const HeroImage({
+  HeroImage({
     this.borderColor = Colors.white,
     this.backgroundColor = Colors.transparent,
     this.widgetColor = Colors.white,
   });
 
   @override
+  _HeroImageState createState() => _HeroImageState();
+}
+
+class _HeroImageState extends State<HeroImage> {
+  bool showLogo;
+
+  wait() async {
+    await Future.delayed(Duration(milliseconds: 250));
+    setState(() {
+      showLogo = !showLogo;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    showLogo = false;
+    wait();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 300,
-      height: 300,
-      // decoration: BoxDecoration(
-      //   //shape: BoxShape.circle,
-      //   color: backgroundColor,
-      //   //border: Border.all(color: borderColor, width: 2),
-      //   image: DecorationImage(
-      //     //fit: BoxFit.fitHeight,
-      //     image: AssetImage('assets/images/me.png'),
-      //   ),
-      // ),
-      child: Image.asset(
-        'assets/images/me.png',
-        color: widgetColor,
+    return AnimatedOpacity(
+      opacity: showLogo ? 1 : 0,
+      duration: Duration(seconds: 1),
+      child: Container(
+        width: 300,
+        height: 300,
+        // decoration: BoxDecoration(
+        //   //shape: BoxShape.circle,
+        //   color: backgroundColor,
+        //   //border: Border.all(color: borderColor, width: 2),
+        //   image: DecorationImage(
+        //     //fit: BoxFit.fitHeight,
+        //     image: AssetImage('assets/images/me.png'),
+        //   ),
+        // ),
+        child: Image.asset(
+          'assets/images/logo/me.png',
+          color: widget.widgetColor,
+        ),
       ),
     );
   }

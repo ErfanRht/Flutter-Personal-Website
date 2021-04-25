@@ -4,7 +4,7 @@ import 'package:personal_web/models/typewriter.dart';
 class AboutManImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Image.asset('assets/images/man.png');
+    return Image.asset('assets/images/illustration/about.png');
   }
 }
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:personal_web/models/typewriter.dart';
+import 'package:personal_web/screens/skills/skill_box.dart';
 
 class SkillsManImage extends StatelessWidget {
   @override
@@ -7,8 +8,8 @@ class SkillsManImage extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 150),
       child: Image.asset(
-        'assets/images/skills.png',
-        height: 400,
+        'assets/images/illustration/skills.png',
+        height: 450,
       ),
     );
   }
@@ -29,7 +30,7 @@ class _SkillsContentState extends State<SkillsContent>
   static bool showStack1 = false;
   static bool showStack2 = false;
 
-  static bool whoSeen = false;
+  static bool whatSeen = false;
   static bool skillsSeen = false;
   static bool stack1Seen = false;
   static bool stack2Seen = false;
@@ -54,8 +55,8 @@ class _SkillsContentState extends State<SkillsContent>
         mainAxisSize: MainAxisSize.min,
         children: [
           Typewriter(
-            'Who am I?',
-            animate: !whoSeen,
+            'What are my skills?',
+            animate: !whatSeen,
             duration: const Duration(seconds: 1),
             textStyle: TextStyle(
               color: widget.color,
@@ -67,7 +68,7 @@ class _SkillsContentState extends State<SkillsContent>
               if (mounted) {
                 setState(() {
                   showSkills = true;
-                  whoSeen = true;
+                  whatSeen = true;
                 });
               }
             },
@@ -79,49 +80,55 @@ class _SkillsContentState extends State<SkillsContent>
             color: widget.color,
           ),
           if (showSkills)
-            Typewriter(
-              "Hello! I'm Erfan Rahmati, A teen software developer.\n\n"
-              "I love to create performant and interesting stuff that are beneficial to the community\n"
-              "I enjoy learning and exploring new areas in the technologies I work with and even the ones outside my stack.\n\n",
-              //"Currently I am working with Dart, Python and Framework languages.",
-              animate: !skillsSeen,
-              duration: const Duration(seconds: 10),
-              textStyle: TextStyle(
-                color: widget.color,
-                fontSize: 16,
-                letterSpacing: 1.2,
-                height: 1.3,
-              ),
-              onEnd: () {
-                if (mounted) {
-                  setState(() {
-                    showStack1 = true;
-                    skillsSeen = true;
-                  });
-                }
-              },
+            SkillBox(
+              color: widget.color,
+              isMobile: widget.isMobile,
+              score: 90,
             ),
+
+          //   Typewriter(
+          //     "Hello! I'm Erfan Rahmati, A teen software developer.\n\n"
+          //     "I love to create performant and interesting stuff that are beneficial to the community\n"
+          //     "I enjoy learning and exploring new areas in the technologies I work with and even the ones outside my stack.\n\n",
+          //     //"Currently I am working with Dart, Python and Framework languages.",
+          //     animate: !skillsSeen,
+          //     duration: const Duration(seconds: 10),
+          //     textStyle: TextStyle(
+          //       color: widget.color,
+          //       fontSize: 16,
+          //       letterSpacing: 1.2,
+          //       height: 1.3,
+          //     ),
+          //     onEnd: () {
+          //       if (mounted) {
+          //         setState(() {
+          //           showStack1 = true;
+          //           skillsSeen = true;
+          //         });
+          //       }
+          //     },
+          //   ),
           if (showStack1) ...[
             SizedBox(height: 54),
-            Typewriter(
-              'What do I work with?',
-              animate: !stack1Seen,
-              duration: const Duration(seconds: 1),
-              textStyle: TextStyle(
-                color: widget.color,
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
-                letterSpacing: 1.4,
-              ),
-              onEnd: () {
-                if (mounted) {
-                  setState(() {
-                    showStack2 = true;
-                    stack1Seen = true;
-                  });
-                }
-              },
-            ),
+            // Typewriter(
+            //   'What do I work with?',
+            //   animate: !stack1Seen,
+            //   duration: const Duration(seconds: 1),
+            //   textStyle: TextStyle(
+            //     color: widget.color,
+            //     fontSize: 24,
+            //     fontWeight: FontWeight.w700,
+            //     letterSpacing: 1.4,
+            //   ),
+            //   onEnd: () {
+            //     if (mounted) {
+            //       setState(() {
+            //         showStack2 = true;
+            //         stack1Seen = true;
+            //       });
+            //     }
+            //   },
+            // ),
             Container(
               width: 60,
               height: 2,

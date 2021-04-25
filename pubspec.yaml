@@ -24,7 +24,9 @@ flutter:
 
   assets:
     - assets/resume/
-    - assets/images/
+    - assets/images/logo/
+    - assets/images/illustration/
+
 
   fonts:
     - family: MySocialIcons

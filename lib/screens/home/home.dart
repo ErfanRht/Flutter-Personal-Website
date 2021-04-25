@@ -18,7 +18,9 @@ class HomeSection extends StatelessWidget {
             flex: 8,
             child: Padding(
               padding: EdgeInsets.only(left: 150),
-              child: HeroImage(),
+              child: HeroImage(
+                widgetColor: Color(0xfffafafa),
+              ),
             ),
           ),
           Spacer(flex: 2),

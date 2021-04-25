@@ -12,13 +12,13 @@ class _SkillsSectionState extends State<SkillsSection> {
     return Center(
       child: Row(
         children: [
-          Spacer(flex: 2),
-          SizedBox(width: 32),
+          Spacer(flex: 1),
+          SizedBox(width: 10),
           Expanded(
-            flex: 8,
+            flex: 10,
             child: SkillsManImage(),
           ),
-          SizedBox(width: 36),
+          //SizedBox(width: 36),
           Expanded(
             flex: 6,
             child: SkillsContent(),
