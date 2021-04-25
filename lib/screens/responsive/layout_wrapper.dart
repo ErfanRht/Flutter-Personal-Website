@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:personal_web/screens/responsive/screen_type_layout.dart';
-import 'package:personal_web/screens/main_page.dart';
+import 'package:personal_web/screens/main/main_page.dart';
 
 class LayoutWrapper extends StatefulWidget {
   @override

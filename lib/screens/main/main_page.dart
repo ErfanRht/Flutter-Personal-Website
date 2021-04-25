@@ -1,7 +1,7 @@
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 import 'package:flutter/material.dart';
-import 'package:personal_web/screens/body.dart';
+import 'package:personal_web/screens/main/body.dart';
 import 'package:personal_web/shared/drawer.dart';
 import 'package:personal_web/shared/nav_bar.dart';
 import 'package:personal_web/shared/social_media_bar.dart';
