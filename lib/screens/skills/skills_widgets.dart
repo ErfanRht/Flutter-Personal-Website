@@ -27,21 +27,27 @@ class SkillsContent extends StatefulWidget {
 class _SkillsContentState extends State<SkillsContent>
     with TickerProviderStateMixin {
   static bool showSkills = false;
-  static bool showStack1 = false;
-  static bool showStack2 = false;
-
-  static bool whatSeen = false;
   static bool skillsSeen = false;
-  static bool stack1Seen = false;
-  static bool stack2Seen = false;
+  static bool whatSeen = false;
+  static double space = 30;
 
-  final stack = [
-    'Dart (Flutter)',
-    'Python',
-    'Git',
+  final skills = [
+    'Flutter',
+    'Python ',
+    'Dart    ',
+    'Git       ',
+    'Linux  ',
+    'HTML   ',
     'MySQL',
-    'Linux',
+    'Selenium',
   ];
+  final scores = [90.0, 85.0, 85.0, 90.0, 85.0, 75.0, 80.0, 92.5];
+
+  @override
+  void initState() {
+    super.initState();
+    endPage();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -79,114 +85,113 @@ class _SkillsContentState extends State<SkillsContent>
             margin: const EdgeInsets.only(top: 4, bottom: 16),
             color: widget.color,
           ),
-          if (showSkills)
-            SkillBox(
-              color: widget.color,
-              isMobile: widget.isMobile,
-              score: 90,
+          if (showSkills) ...[
+            SizedBox(
+              height: space / 2,
             ),
-
-          //   Typewriter(
-          //     "Hello! I'm Erfan Rahmati, A teen software developer.\n\n"
-          //     "I love to create performant and interesting stuff that are beneficial to the community\n"
-          //     "I enjoy learning and exploring new areas in the technologies I work with and even the ones outside my stack.\n\n",
-          //     //"Currently I am working with Dart, Python and Framework languages.",
-          //     animate: !skillsSeen,
-          //     duration: const Duration(seconds: 10),
-          //     textStyle: TextStyle(
-          //       color: widget.color,
-          //       fontSize: 16,
-          //       letterSpacing: 1.2,
-          //       height: 1.3,
-          //     ),
-          //     onEnd: () {
-          //       if (mounted) {
-          //         setState(() {
-          //           showStack1 = true;
-          //           skillsSeen = true;
-          //         });
-          //       }
-          //     },
-          //   ),
-          if (showStack1) ...[
-            SizedBox(height: 54),
-            // Typewriter(
-            //   'What do I work with?',
-            //   animate: !stack1Seen,
-            //   duration: const Duration(seconds: 1),
-            //   textStyle: TextStyle(
-            //     color: widget.color,
-            //     fontSize: 24,
-            //     fontWeight: FontWeight.w700,
-            //     letterSpacing: 1.4,
-            //   ),
-            //   onEnd: () {
-            //     if (mounted) {
-            //       setState(() {
-            //         showStack2 = true;
-            //         stack1Seen = true;
-            //       });
-            //     }
-            //   },
-            // ),
-            Container(
-              width: 60,
-              height: 2,
-              margin: const EdgeInsets.only(top: 4, bottom: 16),
-              color: widget.color,
+            Row(
+              children: [
+                SkillBox(
+                  name: skills[0],
+                  color: widget.color,
+                  isMobile: widget.isMobile,
+                  score: scores[0],
+                  waitTime: 0,
+                ),
+                SizedBox(
+                  width: 50,
+                ),
+                SkillBox(
+                  name: skills[1],
+                  color: widget.color,
+                  isMobile: widget.isMobile,
+                  score: scores[1],
+                  waitTime: 3,
+                ),
+              ],
             ),
-          ],
-          if (showStack2)
-            widget.isMobile
-                ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: stack
-                        .map<Widget>(
-                          (s) => Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8),
-                            child: _buildStackItem(s),
-                          ),
-                        )
-                        .toList(),
-                  )
-                : Wrap(
-                    spacing: 80,
-                    runSpacing: 12,
-                    children: stack.map<Widget>(_buildStackItem).toList(),
-                  ),
+            SizedBox(
+              height: space,
+            ),
+            Row(
+              children: [
+                SkillBox(
+                  name: skills[2],
+                  color: widget.color,
+                  isMobile: widget.isMobile,
+                  score: scores[2],
+                  waitTime: 6,
+                ),
+                SizedBox(
+                  width: 50,
+                ),
+                SkillBox(
+                  name: skills[3],
+                  color: widget.color,
+                  isMobile: widget.isMobile,
+                  score: scores[3],
+                  waitTime: 9,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: space,
+            ),
+            Row(
+              children: [
+                SkillBox(
+                  name: skills[4],
+                  color: widget.color,
+                  isMobile: widget.isMobile,
+                  score: scores[4],
+                  waitTime: 12,
+                ),
+                SizedBox(
+                  width: 50,
+                ),
+                SkillBox(
+                  name: skills[5],
+                  color: widget.color,
+                  isMobile: widget.isMobile,
+                  score: scores[5],
+                  waitTime: 15,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: space,
+            ),
+            Row(
+              children: [
+                SkillBox(
+                  name: skills[6],
+                  color: widget.color,
+                  isMobile: widget.isMobile,
+                  score: scores[6],
+                  waitTime: 18,
+                ),
+                SizedBox(
+                  width: 50,
+                ),
+                SkillBox(
+                  name: skills[7],
+                  color: widget.color,
+                  isMobile: widget.isMobile,
+                  score: scores[7],
+                  waitTime: 21,
+                ),
+              ],
+            ),
+          ]
         ],
       ),
     );
   }
 
-  Widget _buildStackItem(String item) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        CircleAvatar(
-          radius: 3,
-          backgroundColor: widget.color,
-        ),
-        SizedBox(width: 5),
-        Typewriter(
-          item,
-          animate: !stack2Seen,
-          duration: const Duration(seconds: 1),
-          textStyle: TextStyle(
-            color: widget.color,
-            fontSize: 16,
-            letterSpacing: 1.4,
-          ),
-          onEnd: () {
-            if (mounted) {
-              setState(() {
-                stack2Seen = true;
-              });
-            }
-          },
-        ),
-      ],
-    );
+  endPage() async {
+    await Future.delayed(Duration(seconds: skills.length * 3));
+    setState(() {
+      skillsSeen = true;
+    });
   }
 }

@@ -20,10 +20,10 @@ class _SkillsSectionState extends State<SkillsSection> {
           ),
           //SizedBox(width: 36),
           Expanded(
-            flex: 6,
+            flex: 8,
             child: SkillsContent(),
           ),
-          Spacer(flex: 2),
+          //Spacer(flex: 2),
         ],
       ),
     );
