@@ -75,7 +75,7 @@ class _AboutContentState extends State<AboutContent>
           if (showAbout)
             Typewriter(
               "Hello! I'm Erfan Rahmati, A teen software developer.\n\n"
-              "I love to create performant and interesting stuff that are beneficial to the community\n"
+              "I love to create performant and interesting stuff that are beneficial to the community.\n"
               "I enjoy learning and exploring new areas in the technologies I work with and even the ones outside my stack.\n\n",
               //"Currently I am working with Dart, Python and Framework languages.",
               animate: !aboutSeen,
@@ -98,9 +98,9 @@ class _AboutContentState extends State<AboutContent>
           if (showStack1) ...[
             SizedBox(height: 54),
             Typewriter(
-              'What do I work with?',
+              'What things is I use to get stuff done?',
               animate: !stack1Seen,
-              duration: const Duration(seconds: 1),
+              duration: const Duration(seconds: 2),
               textStyle: TextStyle(
                 color: widget.color,
                 fontSize: 24,
@@ -122,58 +122,28 @@ class _AboutContentState extends State<AboutContent>
               margin: const EdgeInsets.only(top: 4, bottom: 16),
               color: widget.color,
             ),
+            if (showStack2)
+              Typewriter(
+                'OS: Ubuntu 20.04\nBrowser: Chorme Web Browser\nTerminal: ZSH: Oh My Zsh (PowerLevel10k)\nCode Editor: VSCode - The best editor out there.\nTo Stay Updated: Medium, Virgool, Telegram and Twitter.',
+                animate: !stack2Seen,
+                duration: const Duration(seconds: 6),
+                textStyle: TextStyle(
+                  color: widget.color,
+                  fontSize: 16,
+                  letterSpacing: 1.2,
+                  height: 1.3,
+                ),
+                onEnd: () {
+                  if (mounted) {
+                    setState(() {
+                      stack2Seen = true;
+                    });
+                  }
+                },
+              ),
           ],
-          if (showStack2)
-            widget.isMobile
-                ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: stack
-                        .map<Widget>(
-                          (s) => Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8),
-                            child: _buildStackItem(s),
-                          ),
-                        )
-                        .toList(),
-                  )
-                : Wrap(
-                    spacing: 80,
-                    runSpacing: 12,
-                    children: stack.map<Widget>(_buildStackItem).toList(),
-                  ),
         ],
       ),
-    );
-  }
-
-  Widget _buildStackItem(String item) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        CircleAvatar(
-          radius: 3,
-          backgroundColor: widget.color,
-        ),
-        SizedBox(width: 5),
-        Typewriter(
-          item,
-          animate: !stack2Seen,
-          duration: const Duration(seconds: 1),
-          textStyle: TextStyle(
-            color: widget.color,
-            fontSize: 16,
-            letterSpacing: 1.4,
-          ),
-          onEnd: () {
-            if (mounted) {
-              setState(() {
-                stack2Seen = true;
-              });
-            }
-          },
-        ),
-      ],
     );
   }
 }

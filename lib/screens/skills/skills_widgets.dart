@@ -35,12 +35,13 @@ class _SkillsContentState extends State<SkillsContent>
     'Flutter',
     'Python ',
     'Dart    ',
-    'Git       ',
+    'PHP      ',
+    'Git      ',
     'Linux  ',
-    'HTML   ',
-    'MySQL',
+    'HTML  ',
+    'MySQL ',
   ];
-  final scores = [90.0, 85.0, 85.0, 90.0, 85.0, 75.0, 80.0];
+  final scores = [90.0, 85.0, 85.0, 60.0, 90.0, 85.0, 75.0, 80.0];
 
   @override
   void initState() {
@@ -95,6 +96,7 @@ class _SkillsContentState extends State<SkillsContent>
                   color: widget.color,
                   isMobile: widget.isMobile,
                   score: scores[0],
+                  seen: skillsSeen,
                   waitTime: 0,
                 ),
                 SizedBox(
@@ -105,6 +107,7 @@ class _SkillsContentState extends State<SkillsContent>
                   color: widget.color,
                   isMobile: widget.isMobile,
                   score: scores[1],
+                  seen: skillsSeen,
                   waitTime: 3,
                 ),
               ],
@@ -119,6 +122,7 @@ class _SkillsContentState extends State<SkillsContent>
                   color: widget.color,
                   isMobile: widget.isMobile,
                   score: scores[2],
+                  seen: skillsSeen,
                   waitTime: 6,
                 ),
                 SizedBox(
@@ -129,6 +133,7 @@ class _SkillsContentState extends State<SkillsContent>
                   color: widget.color,
                   isMobile: widget.isMobile,
                   score: scores[3],
+                  seen: skillsSeen,
                   waitTime: 9,
                 ),
               ],
@@ -143,6 +148,7 @@ class _SkillsContentState extends State<SkillsContent>
                   color: widget.color,
                   isMobile: widget.isMobile,
                   score: scores[4],
+                  seen: skillsSeen,
                   waitTime: 12,
                 ),
                 SizedBox(
@@ -153,6 +159,7 @@ class _SkillsContentState extends State<SkillsContent>
                   color: widget.color,
                   isMobile: widget.isMobile,
                   score: scores[5],
+                  seen: skillsSeen,
                   waitTime: 15,
                 ),
               ],
@@ -167,7 +174,19 @@ class _SkillsContentState extends State<SkillsContent>
                   color: widget.color,
                   isMobile: widget.isMobile,
                   score: scores[6],
+                  seen: skillsSeen,
                   waitTime: 18,
+                ),
+                SizedBox(
+                  width: 50,
+                ),
+                SkillBox(
+                  name: skills[7],
+                  color: widget.color,
+                  isMobile: widget.isMobile,
+                  score: scores[7],
+                  seen: skillsSeen,
+                  waitTime: 21,
                 ),
               ],
             ),
