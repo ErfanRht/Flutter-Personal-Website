@@ -39,9 +39,8 @@ class _SkillsContentState extends State<SkillsContent>
     'Linux  ',
     'HTML   ',
     'MySQL',
-    'Selenium',
   ];
-  final scores = [90.0, 85.0, 85.0, 90.0, 85.0, 75.0, 80.0, 92.5];
+  final scores = [90.0, 85.0, 85.0, 90.0, 85.0, 75.0, 80.0];
 
   @override
   void initState() {
@@ -169,16 +168,6 @@ class _SkillsContentState extends State<SkillsContent>
                   isMobile: widget.isMobile,
                   score: scores[6],
                   waitTime: 18,
-                ),
-                SizedBox(
-                  width: 50,
-                ),
-                SkillBox(
-                  name: skills[7],
-                  color: widget.color,
-                  isMobile: widget.isMobile,
-                  score: scores[7],
-                  waitTime: 21,
                 ),
               ],
             ),

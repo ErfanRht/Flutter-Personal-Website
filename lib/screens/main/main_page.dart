@@ -2,6 +2,7 @@
 import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:personal_web/screens/main/body.dart';
+import 'package:personal_web/screens/skills/skills_mobile.dart';
 import 'package:personal_web/shared/drawer.dart';
 import 'package:personal_web/shared/nav_bar.dart';
 import 'package:personal_web/shared/social_media_bar.dart';
@@ -22,6 +23,7 @@ class _MobilePageState extends State<MobilePage> {
   final pages = [
     HomeSectionMobile(),
     AboutSectionMobile(),
+    SkillsSectionMobile()
   ];
 
   @override
