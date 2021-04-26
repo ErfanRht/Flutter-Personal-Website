@@ -12,7 +12,7 @@ class SkillsSectionMobile extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SkillsManImage(),
+            SkillsManImage(true),
             SizedBox(height: 32),
             SkillsContent(color: Colors.teal, isMobile: true),
           ],

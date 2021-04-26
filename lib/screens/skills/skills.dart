@@ -16,7 +16,7 @@ class _SkillsSectionState extends State<SkillsSection> {
           SizedBox(width: 10),
           Expanded(
             flex: 10,
-            child: SkillsManImage(),
+            child: SkillsManImage(false),
           ),
           //SizedBox(width: 36),
           Expanded(

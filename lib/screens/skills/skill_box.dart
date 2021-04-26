@@ -66,7 +66,7 @@ class _SkillBoxState extends State<SkillBox> with TickerProviderStateMixin {
             duration: Duration(seconds: widget.seen ? 0 : 1),
             textStyle: TextStyle(
               color: widget.color,
-              fontSize: widget.name == 'Selenium' ? 12.5 : 15,
+              fontSize: 15,
               fontWeight: FontWeight.w700,
               letterSpacing: 1.4,
             ),
@@ -82,7 +82,8 @@ class _SkillBoxState extends State<SkillBox> with TickerProviderStateMixin {
         AnimatedContainer(
           duration: Duration(seconds: widget.seen ? 0 : 1),
           decoration: BoxDecoration(
-              color: Color(0xfffafafa), borderRadius: BorderRadius.circular(8)),
+              color: widget.isMobile ? Color(0xffd3d3d3) : Color(0xfffafafa),
+              borderRadius: BorderRadius.circular(8)),
           height: 17.5,
           width: widgetWidth,
           child: Center(

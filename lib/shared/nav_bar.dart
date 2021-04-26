@@ -30,16 +30,14 @@ class MobileNavbar extends StatelessWidget implements PreferredSizeWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           CircleAvatar(
-            backgroundColor: Colors.teal,
-            radius: 15,
-            child: Text(
-              'D',
-              style: TextStyle(
+              backgroundColor: Colors.teal,
+              radius: 15,
+              child: Image.asset(
+                'assets/images/logo/logo.png',
+                height: 20,
+                //'web/icons/favicon-32x32',
                 color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
+              )),
           SizedBox(width: 10),
           RichText(
             textAlign: TextAlign.center,
@@ -94,7 +92,7 @@ class _NavbarState extends State<Navbar> {
     'Home',
     'About',
     'Skills',
-    'Experience',
+    'Portfolio',
     'Projects',
     'Resume',
   ];
@@ -124,17 +122,8 @@ class _NavbarState extends State<Navbar> {
                     child: Image.asset(
                       'assets/images/logo/logo.png',
                       height: 20,
-                      //'web/icons/favicon-32x32',
                       color: Colors.white,
-                    )
-                    //  Text(
-                    //   'ER',
-                    //   style: TextStyle(
-                    //     color: Colors.white,
-                    //     fontWeight: FontWeight.bold,
-                    //   ),
-                    // ),
-                    ),
+                    )),
                 SizedBox(width: 8),
                 RichText(
                   textAlign: TextAlign.center,
@@ -180,6 +169,17 @@ class _NavbarState extends State<Navbar> {
                         }
                         break;
                       case 'Skills':
+                        if (mounted) {
+                          setState(() {
+                            selectedIndex = items.indexOf(item);
+                          });
+
+                          if (widget.onItemSelected != null) {
+                            widget.onItemSelected(selectedIndex);
+                          }
+                        }
+                        break;
+                      case 'Portfolio':
                         if (mounted) {
                           setState(() {
                             selectedIndex = items.indexOf(item);

@@ -57,6 +57,19 @@ class _AppDrawerState extends State<AppDrawer> {
               ),
             ),
             Column(
+              children: [
+                Container(
+                  height: 100,
+                  width: 100,
+                  margin: EdgeInsets.only(top: 75),
+                  child: Image.asset(
+                    'assets/images/logo/me.png',
+                    color: Color(0xfffafafa),
+                  ),
+                ),
+              ],
+            ),
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: items.map((item) {
@@ -65,6 +78,17 @@ class _AppDrawerState extends State<AppDrawer> {
                     switch (item) {
                       case 'Home':
                       case 'About':
+                        if (mounted) {
+                          setState(() {
+                            selectedIndex = items.indexOf(item);
+                          });
+
+                          if (widget.onItemSelected != null) {
+                            widget.onItemSelected(selectedIndex);
+                          }
+                        }
+                        break;
+                      case 'Skills':
                         if (mounted) {
                           setState(() {
                             selectedIndex = items.indexOf(item);

@@ -28,14 +28,6 @@ class _AboutContentState extends State<AboutContent>
   static bool stack1Seen = false;
   static bool stack2Seen = false;
 
-  final stack = [
-    'Dart (Flutter)',
-    'Python',
-    'Git',
-    'MySQL',
-    'Linux',
-  ];
-
   @override
   Widget build(BuildContext context) {
     return AnimatedSize(
