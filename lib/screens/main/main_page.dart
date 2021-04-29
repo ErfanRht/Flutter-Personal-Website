@@ -1,13 +1,13 @@
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 import 'package:flutter/material.dart';
-import 'package:personal_web/screens/main/body.dart';
-import 'package:personal_web/screens/skills/skills_mobile.dart';
+import 'package:personal_web/screens/body/body.dart';
+import 'package:personal_web/screens/body/sections/skills/skills_mobile.dart';
 import 'package:personal_web/shared/drawer.dart';
 import 'package:personal_web/shared/nav_bar.dart';
 import 'package:personal_web/shared/social_media_bar.dart';
-import 'package:personal_web/screens/about/about_mobile.dart';
-import 'package:personal_web/screens/home/home_mobile.dart';
+import 'package:personal_web/screens/body/sections/about/about_mobile.dart';
+import 'package:personal_web/screens/body/sections/home/home_mobile.dart';
 
 class MobilePage extends StatefulWidget {
   final int pageIndex;
@@ -23,7 +23,7 @@ class _MobilePageState extends State<MobilePage> {
   final pages = [
     HomeSectionMobile(),
     AboutSectionMobile(),
-    SkillsSectionMobile()
+    SkillsSectionMobile(),
   ];
 
   @override

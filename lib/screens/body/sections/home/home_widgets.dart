@@ -210,19 +210,10 @@ class _HeroImageState extends State<HeroImage> {
   Widget build(BuildContext context) {
     return AnimatedOpacity(
       opacity: showLogo ? 1 : 0,
-      duration: Duration(seconds: 1),
+      duration: Duration(milliseconds: 250),
       child: Container(
         width: 300,
         height: 300,
-        // decoration: BoxDecoration(
-        //   //shape: BoxShape.circle,
-        //   color: backgroundColor,
-        //   //border: Border.all(color: borderColor, width: 2),
-        //   image: DecorationImage(
-        //     //fit: BoxFit.fitHeight,
-        //     image: AssetImage('assets/images/me.png'),
-        //   ),
-        // ),
         child: Image.asset(
           'assets/images/logo/me.png',
           color: widget.widgetColor,

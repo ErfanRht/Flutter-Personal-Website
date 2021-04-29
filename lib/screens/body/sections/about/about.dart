@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:personal_web/screens/about/about_widgets.dart';
+import 'package:personal_web/screens/body/sections/about/about_widgets.dart';
 
 class AboutSection extends StatefulWidget {
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:personal_web/screens/skills/skills_widgets.dart';
+import 'package:personal_web/screens/body/sections/about/about_widgets.dart';
 
-class SkillsSectionMobile extends StatelessWidget {
+class AboutSectionMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -12,9 +12,9 @@ class SkillsSectionMobile extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SkillsManImage(true),
+            AboutManImage(),
             SizedBox(height: 32),
-            SkillsContent(color: Colors.teal, isMobile: true),
+            AboutContent(color: Colors.teal, isMobile: true),
           ],
         ),
       ),

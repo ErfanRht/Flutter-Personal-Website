@@ -21,10 +21,12 @@ class SkillBox extends StatefulWidget {
 
 class _SkillBoxState extends State<SkillBox> with TickerProviderStateMixin {
   double widgetWidth, insideWidgetWidth, space;
+  int showSpeed;
   bool start;
   @override
   void initState() {
     super.initState();
+    showSpeed = 750;
     if (widget.seen) {
       start = true;
       widgetWidth = 200;
@@ -63,7 +65,7 @@ class _SkillBoxState extends State<SkillBox> with TickerProviderStateMixin {
           Typewriter(
             widget.name,
             animate: true,
-            duration: Duration(seconds: widget.seen ? 0 : 1),
+            duration: Duration(milliseconds: widget.seen ? 0 : showSpeed),
             textStyle: TextStyle(
               color: widget.color,
               fontSize: 15,
@@ -80,7 +82,7 @@ class _SkillBoxState extends State<SkillBox> with TickerProviderStateMixin {
           width: space,
         ),
         AnimatedContainer(
-          duration: Duration(seconds: widget.seen ? 0 : 1),
+          duration: Duration(milliseconds: widget.seen ? 0 : showSpeed),
           decoration: BoxDecoration(
               color: widget.isMobile ? Color(0xffd3d3d3) : Color(0xfffafafa),
               borderRadius: BorderRadius.circular(8)),
@@ -93,7 +95,7 @@ class _SkillBoxState extends State<SkillBox> with TickerProviderStateMixin {
                   width: 2.5,
                 ),
                 AnimatedContainer(
-                  duration: Duration(seconds: widget.seen ? 0 : 1),
+                  duration: Duration(milliseconds: widget.seen ? 0 : showSpeed),
                   decoration: BoxDecoration(
                       color: Colors.blue,
                       borderRadius: BorderRadius.circular(6)),
@@ -110,7 +112,7 @@ class _SkillBoxState extends State<SkillBox> with TickerProviderStateMixin {
 
   startWidget() async {
     if (!widget.seen) {
-      await Future.delayed(Duration(seconds: widget.waitTime));
+      await Future.delayed(Duration(milliseconds: widget.waitTime));
       setState(() {
         start = true;
       });
@@ -122,7 +124,7 @@ class _SkillBoxState extends State<SkillBox> with TickerProviderStateMixin {
       widgetWidth = 200;
     });
     if (!widget.seen) {
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(Duration(milliseconds: showSpeed));
       setState(() {
         insideWidgetWidth = widget.score * 2;
       });

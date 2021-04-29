@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:personal_web/shared/nav_bar.dart';
-import 'package:personal_web/screens/about/about.dart';
-import 'package:personal_web/screens/home/home.dart';
-import 'package:personal_web/screens/skills/skills.dart';
+import 'package:personal_web/screens/body/sections/about/about.dart';
+import 'package:personal_web/screens/body/sections/home/home.dart';
+import 'package:personal_web/screens/body/sections/skills/skills.dart';
 
 class PageBody extends StatefulWidget {
   final int pageIndex;
@@ -27,7 +27,7 @@ class _PageBodyState extends State<PageBody> {
         ),
         Expanded(
           child: AnimatedSwitcher(
-            duration: kThemeAnimationDuration,
+            duration: Duration(milliseconds: 350),
             child: pages[widget.pageIndex],
           ),
         ),
