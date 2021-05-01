@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:personal_web/models/typewriter.dart';
+import 'package:flutter/rendering.dart';
+import 'package:personal_web/models/models/typewriter.dart';
 import 'package:personal_web/screens/body/sections/skills/skill_box.dart';
 
 class SkillsManImage extends StatelessWidget {
@@ -31,17 +32,19 @@ class _SkillsContentState extends State<SkillsContent>
   static bool showSkills = false;
   static bool skillsSeen = false;
   static bool whatSeen = false;
-  static double space;
+  static double space, widthSpace;
 
   List skills;
   List scores;
-  int showSpeed;
+  int showSpeed, skillNumber;
 
   @override
   void initState() {
     super.initState();
     space = 30;
+    widthSpace = 50;
     showSpeed = 750;
+    skillNumber = -2;
     if (!widget.isMobile) {
       skills = [
         'Flutter',
@@ -52,6 +55,8 @@ class _SkillsContentState extends State<SkillsContent>
         'Linux  ',
         'HTML  ',
         'MySQL ',
+        'Regex ',
+        'JSON    '
       ];
     } else {
       skills = [
@@ -63,9 +68,11 @@ class _SkillsContentState extends State<SkillsContent>
         'Linux  ',
         'HTML  ',
         'MySQL',
+        'Regex ',
+        'JSON  '
       ];
     }
-    scores = [90.0, 85.0, 85.0, 60.0, 90.0, 85.0, 75.0, 80.0];
+    scores = [90.0, 80.0, 85.0, 60.0, 90.0, 85.0, 75.0, 80.0, 75.0, 85];
     endPage();
   }
 
@@ -107,205 +114,71 @@ class _SkillsContentState extends State<SkillsContent>
           ),
           if (!widget.isMobile) ...[
             if (showSkills) ...[
-              SizedBox(
-                height: space / 2,
-              ),
+              sizedBox(space / 2, 0),
               Row(
                 children: [
-                  SkillBox(
-                    name: skills[0],
-                    color: widget.color,
-                    isMobile: widget.isMobile,
-                    score: scores[0],
-                    seen: skillsSeen,
-                    waitTime: 0 * 3 * showSpeed,
-                  ),
-                  SizedBox(
-                    width: 50,
-                  ),
-                  SkillBox(
-                    name: skills[1],
-                    color: widget.color,
-                    isMobile: widget.isMobile,
-                    score: scores[1],
-                    seen: skillsSeen,
-                    waitTime: 1 * 3 * showSpeed,
-                  ),
+                  skillBoxShower(0),
+                  sizedBox(0, widthSpace),
+                  skillBoxShower(1),
                 ],
               ),
-              SizedBox(
-                height: space,
-              ),
+              sizedBox(space, 0),
               Row(
                 children: [
-                  SkillBox(
-                    name: skills[2],
-                    color: widget.color,
-                    isMobile: widget.isMobile,
-                    score: scores[2],
-                    seen: skillsSeen,
-                    waitTime: 2 * 3 * showSpeed,
-                  ),
-                  SizedBox(
-                    width: 50,
-                  ),
-                  SkillBox(
-                    name: skills[3],
-                    color: widget.color,
-                    isMobile: widget.isMobile,
-                    score: scores[3],
-                    seen: skillsSeen,
-                    waitTime: 3 * 3 * showSpeed,
-                  ),
+                  skillBoxShower(2),
+                  sizedBox(0, widthSpace),
+                  skillBoxShower(3),
                 ],
               ),
-              SizedBox(
-                height: space,
-              ),
+              sizedBox(space, 0),
               Row(
                 children: [
-                  SkillBox(
-                    name: skills[4],
-                    color: widget.color,
-                    isMobile: widget.isMobile,
-                    score: scores[4],
-                    seen: skillsSeen,
-                    waitTime: 4 * 3 * showSpeed,
-                  ),
-                  SizedBox(
-                    width: 50,
-                  ),
-                  SkillBox(
-                    name: skills[5],
-                    color: widget.color,
-                    isMobile: widget.isMobile,
-                    score: scores[5],
-                    seen: skillsSeen,
-                    waitTime: 5 * 3 * showSpeed,
-                  ),
+                  skillBoxShower(4),
+                  sizedBox(0, widthSpace),
+                  skillBoxShower(5),
                 ],
               ),
-              SizedBox(
-                height: space,
-              ),
+              sizedBox(space, 0),
               Row(
                 children: [
-                  SkillBox(
-                    name: skills[6],
-                    color: widget.color,
-                    isMobile: widget.isMobile,
-                    score: scores[6],
-                    seen: skillsSeen,
-                    waitTime: 6 * 3 * showSpeed,
-                  ),
-                  SizedBox(
-                    width: 50,
-                  ),
-                  SkillBox(
-                    name: skills[7],
-                    color: widget.color,
-                    isMobile: widget.isMobile,
-                    score: scores[7],
-                    seen: skillsSeen,
-                    waitTime: 7 * 3 * showSpeed,
-                  ),
+                  skillBoxShower(6),
+                  sizedBox(0, widthSpace),
+                  skillBoxShower(7),
+                ],
+              ),
+              sizedBox(space, 0),
+              Row(
+                children: [
+                  skillBoxShower(8),
+                  sizedBox(0, widthSpace),
+                  skillBoxShower(9),
                 ],
               ),
             ]
           ] else ...[
             Column(
               children: [
-                SizedBox(
-                  height: 15,
-                ),
-                SkillBox(
-                  name: skills[0],
-                  color: widget.color,
-                  isMobile: widget.isMobile,
-                  score: scores[0],
-                  seen: skillsSeen,
-                  waitTime: 0 * 3 * showSpeed,
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                SkillBox(
-                  name: skills[1],
-                  color: widget.color,
-                  isMobile: widget.isMobile,
-                  score: scores[1],
-                  seen: skillsSeen,
-                  waitTime: 1 * 3 * showSpeed,
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                SkillBox(
-                  name: skills[2],
-                  color: widget.color,
-                  isMobile: widget.isMobile,
-                  score: scores[2],
-                  seen: skillsSeen,
-                  waitTime: 2 * 3 * showSpeed,
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                SkillBox(
-                  name: skills[3],
-                  color: widget.color,
-                  isMobile: widget.isMobile,
-                  score: scores[3],
-                  seen: skillsSeen,
-                  waitTime: 3 * 3 * showSpeed,
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                SkillBox(
-                  name: skills[4],
-                  color: widget.color,
-                  isMobile: widget.isMobile,
-                  score: scores[4],
-                  seen: skillsSeen,
-                  waitTime: 4 * 3 * showSpeed,
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                SkillBox(
-                  name: skills[5],
-                  color: widget.color,
-                  isMobile: widget.isMobile,
-                  score: scores[5],
-                  seen: skillsSeen,
-                  waitTime: 5 * 3 * showSpeed,
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                SkillBox(
-                  name: skills[6],
-                  color: widget.color,
-                  isMobile: widget.isMobile,
-                  score: scores[6],
-                  seen: skillsSeen,
-                  waitTime: 6 * 3 * showSpeed,
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                SkillBox(
-                  name: skills[7],
-                  color: widget.color,
-                  isMobile: widget.isMobile,
-                  score: scores[7],
-                  seen: skillsSeen,
-                  waitTime: 7 * 3 * showSpeed,
-                ),
-                SizedBox(
-                  height: 15,
-                ),
+                sizedBox(15, 0),
+                skillBoxShower(0),
+                sizedBox(15, 0),
+                skillBoxShower(1),
+                sizedBox(15, 0),
+                skillBoxShower(2),
+                sizedBox(15, 0),
+                skillBoxShower(3),
+                sizedBox(15, 0),
+                skillBoxShower(4),
+                sizedBox(15, 0),
+                skillBoxShower(5),
+                sizedBox(15, 0),
+                skillBoxShower(6),
+                sizedBox(15, 0),
+                skillBoxShower(7),
+                sizedBox(15, 0),
+                skillBoxShower(8),
+                sizedBox(15, 0),
+                skillBoxShower(9),
+                sizedBox(15, 0),
               ],
             )
           ]
@@ -315,9 +188,47 @@ class _SkillsContentState extends State<SkillsContent>
   }
 
   endPage() async {
-    await Future.delayed(Duration(milliseconds: skills.length * 3 * showSpeed));
+    await Future.delayed(
+        Duration(milliseconds: (skills.length + 1) * 3 * showSpeed));
     setState(() {
       skillsSeen = true;
     });
+  }
+
+  Widget sizedBox(double height, double width) {
+    return SizedBox(
+      height: height,
+      width: width,
+    );
+  }
+
+  Widget skillRow() {
+    setState(() {
+      skillNumber++;
+      skillNumber++;
+    });
+    return Column(
+      children: [
+        Row(
+          children: [
+            skillBoxShower(skillNumber - 1),
+            sizedBox(0, widthSpace),
+            skillBoxShower(skillNumber),
+          ],
+        ),
+        sizedBox(space, 0),
+      ],
+    );
+  }
+
+  Widget skillBoxShower(int index) {
+    return SkillBox(
+      name: skills[index],
+      color: widget.color,
+      isMobile: widget.isMobile,
+      score: scores[index],
+      seen: skillsSeen,
+      waitTime: index * 3 * showSpeed,
+    );
   }
 }
