@@ -12,14 +12,14 @@ class _AboutSectionState extends State<AboutSection> {
     return Center(
       child: Row(
         children: [
-          //Spacer(flex: 2),
-          SizedBox(width: 32),
+          Spacer(flex: 1),
+          //SizedBox(width: 32),
           Expanded(
-            flex: 9,
+            flex: 7,
             child: AboutManImage(),
           ),
-          Spacer(flex: 1),
-          SizedBox(width: 36),
+          Spacer(flex: 2),
+          //SizedBox(width: 36),
           Expanded(
             flex: 6,
             child: AboutContent(),

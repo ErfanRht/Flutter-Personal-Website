@@ -2,6 +2,7 @@
 import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:personal_web/screens/body/body.dart';
+import 'package:personal_web/screens/body/sections/portfolio/portfolio_mobile.dart';
 import 'package:personal_web/screens/body/sections/skills/skills_mobile.dart';
 import 'package:personal_web/shared/drawer.dart';
 import 'package:personal_web/shared/nav_bar.dart';
@@ -24,6 +25,7 @@ class _MobilePageState extends State<MobilePage> {
     HomeSectionMobile(),
     AboutSectionMobile(),
     SkillsSectionMobile(),
+    PortfolioSectionMobile(),
   ];
 
   @override

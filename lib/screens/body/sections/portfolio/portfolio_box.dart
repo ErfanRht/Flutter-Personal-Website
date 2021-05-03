@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:personal_web/models/models/typewriter.dart';
 
-class SkillBox extends StatefulWidget {
+class PortfolioBox extends StatefulWidget {
   final String name;
   final Color color;
   final bool isMobile, seen;
   final double score;
   final int waitTime;
 
-  const SkillBox(
+  const PortfolioBox(
       {this.name,
       this.color = Colors.white,
       this.isMobile = false,
@@ -16,10 +16,11 @@ class SkillBox extends StatefulWidget {
       this.seen = false,
       this.waitTime = 0});
   @override
-  _SkillBoxState createState() => _SkillBoxState();
+  _PortfolioBoxState createState() => _PortfolioBoxState();
 }
 
-class _SkillBoxState extends State<SkillBox> with TickerProviderStateMixin {
+class _PortfolioBoxState extends State<PortfolioBox>
+    with TickerProviderStateMixin {
   double widgetWidth, insideWidgetWidth, space;
   int showSpeed;
   bool start;

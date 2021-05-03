@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:ms_undraw/ms_undraw.dart';
 import 'package:personal_web/models/models/typewriter.dart';
 
 class AboutManImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Image.asset('assets/images/illustration/about.png');
+    // return Image.asset('assets/images/illustration/about.png');
+    return UnDraw(
+      color: Colors.teal,
+      illustration: UnDrawIllustration.programming,
+      placeholder: Text(
+        "Illustration is loading...",
+        style: TextStyle(
+          color: Colors.teal,
+          fontSize: 20,
+        ),
+      ),
+      errorWidget: Icon(Icons.error_outline, color: Colors.teal, size: 50),
+    );
   }
 }
 

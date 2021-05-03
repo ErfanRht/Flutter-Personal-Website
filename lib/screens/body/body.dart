@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_web/screens/body/sections/portfolio/portfolio.dart';
 import 'package:personal_web/shared/nav_bar.dart';
 import 'package:personal_web/screens/body/sections/about/about.dart';
 import 'package:personal_web/screens/body/sections/home/home.dart';
@@ -15,7 +16,12 @@ class PageBody extends StatefulWidget {
 }
 
 class _PageBodyState extends State<PageBody> {
-  final pages = [HomeSection(), AboutSection(), SkillsSection()];
+  final pages = [
+    HomeSection(),
+    AboutSection(),
+    SkillsSection(),
+    PortfolioSection(),
+  ];
 
   @override
   Widget build(BuildContext context) {

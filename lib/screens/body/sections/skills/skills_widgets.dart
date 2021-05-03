@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:ms_undraw/ms_undraw.dart';
 import 'package:personal_web/models/models/typewriter.dart';
 import 'package:personal_web/screens/body/sections/skills/skill_box.dart';
 
@@ -8,12 +9,24 @@ class SkillsManImage extends StatelessWidget {
   const SkillsManImage(this.isMobile);
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(right: isMobile ? 0 : 150),
-      child: Image.asset(
-        'assets/images/illustration/skills.png',
-        height: 450,
+    // return Padding(
+    //   padding: EdgeInsets.only(right: isMobile ? 0 : 150),
+    //   child: Image.asset(
+    //     'assets/images/illustration/skills.png',
+    //     height: 450,
+    //   ),
+    // );
+    return UnDraw(
+      color: Colors.teal,
+      illustration: UnDrawIllustration.profile,
+      placeholder: Text(
+        "Illustration is loading...",
+        style: TextStyle(
+          color: Colors.teal,
+          fontSize: 20,
+        ),
       ),
+      errorWidget: Icon(Icons.error_outline, color: Colors.teal, size: 50),
     );
   }
 }
@@ -45,33 +58,19 @@ class _SkillsContentState extends State<SkillsContent>
     widthSpace = 50;
     showSpeed = 750;
     skillNumber = -2;
-    if (!widget.isMobile) {
-      skills = [
-        'Flutter',
-        'Python ',
-        'Dart    ',
-        'PHP      ',
-        'Git      ',
-        'Linux  ',
-        'HTML  ',
-        'MySQL ',
-        'Regex ',
-        'JSON    '
-      ];
-    } else {
-      skills = [
-        'Flutter',
-        'Python',
-        'Dart    ',
-        'PHP     ',
-        'Git      ',
-        'Linux  ',
-        'HTML  ',
-        'MySQL',
-        'Regex ',
-        'JSON  '
-      ];
-    }
+    skills = [
+      'Flutter',
+      'Python',
+      'Dart',
+      'PHP',
+      'Git',
+      'Linux',
+      'HTML',
+      'MySQL',
+      'Regex',
+      'JSON'
+    ];
+
     scores = [90.0, 80.0, 85.0, 60.0, 90.0, 85.0, 75.0, 80.0, 75.0, 85];
     endPage();
   }
@@ -90,7 +89,7 @@ class _SkillsContentState extends State<SkillsContent>
           Typewriter(
             'What are my skills?',
             animate: !whatSeen,
-            duration: const Duration(seconds: 1),
+            duration: const Duration(milliseconds: 750),
             textStyle: TextStyle(
               color: widget.color,
               fontSize: 24,
