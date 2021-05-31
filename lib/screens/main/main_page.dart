@@ -1,6 +1,7 @@
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:personal_web/screens/body/body.dart';
 import 'package:personal_web/screens/body/sections/portfolio/portfolio_mobile.dart';
 import 'package:personal_web/screens/body/sections/skills/skills_mobile.dart';
@@ -21,6 +22,7 @@ class MobilePage extends StatefulWidget {
 }
 
 class _MobilePageState extends State<MobilePage> {
+  bool isDark;
   final pages = [
     HomeSectionMobile(),
     AboutSectionMobile(),
@@ -30,6 +32,12 @@ class _MobilePageState extends State<MobilePage> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+    final Brightness brightnessValue =
+        MediaQuery.of(context).platformBrightness;
+
+    setState(() => isDark = brightnessValue == Brightness.dark);
     return Scaffold(
       appBar: MobileNavbar(),
       endDrawer: AppDrawer(
@@ -52,12 +60,20 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark;
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+    final Brightness brightnessValue =
+        MediaQuery.of(context).platformBrightness;
+
+    isDark = brightnessValue == Brightness.dark;
     // Add the File Saver js script
     final script = html.document.createElement('script') as html.ScriptElement;
     script.src = "https://cdn.jsdelivr.net/g/filesaver.js";
     html.document.body.nodes.add(script);
 
     return Scaffold(
+      //backgroundColor: Color(0xfffafafa),
       body: Stack(
         children: [
           CustomPaint(painter: _BackgroundPainter(), size: Size.infinite),

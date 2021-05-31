@@ -100,7 +100,6 @@ class _NavbarState extends State<Navbar> {
   @override
   void initState() {
     super.initState();
-
     selectedIndex = widget.selectedIndex;
   }
 

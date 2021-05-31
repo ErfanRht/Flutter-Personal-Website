@@ -27,7 +27,6 @@ flutter:
   assets:
     - assets/resume/
     - assets/images/logo/
-    - assets/images/illustration/
 
 
   fonts:
