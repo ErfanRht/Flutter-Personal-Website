@@ -10,8 +10,6 @@ import 'package:personal_web/screens/shared/navbar/item.dart';
 class Navbar extends StatelessWidget {
   Pages selectedPage;
   Navbar({@required this.selectedPage});
-
-  final MainController mainController = Get.find();
   
       final textStyle = TextStyle(
     color: Colors.white,
@@ -28,7 +26,7 @@ class Navbar extends StatelessWidget {
     'Resume',
   ];
 
-  final page = [
+  final pages = [
     Pages.HOME,
     Pages.ABOUT,
     Pages.SKILLS,
@@ -118,7 +116,7 @@ class Navbar extends StatelessWidget {
                     },
                     child: item == 'Resume'
                         ? ResumeButton()
-                        : NavbarItem(item: page[items.indexOf(item)], itemName: item, selectedPage: selectedPage)
+                        : NavbarItem(item: pages[items.indexOf(item)], itemName: item, selectedPage: selectedPage)
                   );
                 }).toList(),
               ),

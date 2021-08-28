@@ -1,20 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:personal_web/constants/colors.dart';
+import 'package:personal_web/constants/types.dart';
+import 'package:personal_web/models/change-page.dart';
 import 'package:personal_web/screens/shared/nav_bar.dart';
 import 'package:personal_web/models/url_helper.dart';
 
-class AppDrawer extends StatefulWidget {
-  final int selectedIndex;
-  final void Function(int index) onItemSelected;
-
-  const AppDrawer({this.selectedIndex = 0, this.onItemSelected});
-
-  @override
-  _AppDrawerState createState() => _AppDrawerState();
-}
-
-class _AppDrawerState extends State<AppDrawer> {
-  int selectedIndex;
+class AppDrawer extends StatelessWidget {
+  Pages selectedPage;
+  AppDrawer({@required this.selectedPage});
 
   final textStyle = TextStyle(
     color: Colors.white,
@@ -31,12 +24,13 @@ class _AppDrawerState extends State<AppDrawer> {
     'Resume',
   ];
 
-  @override
-  void initState() {
-    super.initState();
-
-    selectedIndex = widget.selectedIndex;
-  }
+    final page = [
+    Pages.HOME,
+    Pages.ABOUT,
+    Pages.SKILLS,
+    Pages.PORTFOLIO,
+    Pages.RESUME
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +63,7 @@ class _AppDrawerState extends State<AppDrawer> {
                   ),
                 ),
               ],
-            ),
+            ), 
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
@@ -77,44 +71,32 @@ class _AppDrawerState extends State<AppDrawer> {
                 return InkWell(
                   onTap: () {
                     switch (item) {
-                      case 'Home':
-                      case 'About':
-                        if (mounted) {
-                          setState(() {
-                            selectedIndex = items.indexOf(item);
-                          });
-
-                          if (widget.onItemSelected != null) {
-                            widget.onItemSelected(selectedIndex);
+                        case 'Home':
+                          if (selectedPage != Pages.HOME) {
+                            changePage(context, Pages.HOME);
                           }
-                        }
-                        break;
-                      case 'Skills':
-                        if (mounted) {
-                          setState(() {
-                            selectedIndex = items.indexOf(item);
-                          });
-
-                          if (widget.onItemSelected != null) {
-                            widget.onItemSelected(selectedIndex);
+                          break;
+                        case 'About':
+                          if (selectedPage != Pages.ABOUT) {
+                            changePage(context, Pages.ABOUT);
                           }
-                        }
-                        break;
-                      case 'Resume':
-                        break;
-                      case 'Skills':
-                        // UrlHelper.launchUrl(
-                        //   'https://medium.com/@debrahkwesibuabeng2',
-                        // );
-                        break;
-                      default:
-                      // setState(() {
-                      //   selectedIndex = items.indexOf(item);
-                      // });
-
-                      // if (widget.onItemSelected != null) {
-                      //   widget.onItemSelected(selectedIndex);
-                      // }
+                          break;
+                        case 'Skills':
+                          if (selectedPage != Pages.SKILLS) {
+                            changePage(context, Pages.SKILLS);
+                          }
+                          break;
+                        case 'Portfolio':
+                          if (selectedPage != Pages.PORTFOLIO) {
+                            changePage(context, Pages.PORTFOLIO);
+                          }
+                          break;
+                        case 'Resume':
+                          break;
+                        case 'Skills':
+                          break;
+                        default:
+                      
                     }
 
                     Navigator.pop(context);
@@ -129,7 +111,7 @@ class _AppDrawerState extends State<AppDrawer> {
                               style: textStyle.copyWith(
                                 fontWeight: FontWeight.w500,
                                 color: textStyle.color.withOpacity(
-                                  selectedIndex == items.indexOf(item)
+                                  selectedPage == page[items.indexOf(item)]
                                       ? 1.0
                                       : 0.75,
                                 ),
@@ -141,7 +123,7 @@ class _AppDrawerState extends State<AppDrawer> {
                                 duration: Duration(milliseconds: 300),
                                 height: 2,
                                 width: 20,
-                                color: selectedIndex == items.indexOf(item)
+                                color: selectedPage == page[items.indexOf(item)]
                                     ? Colors.white
                                     : Colors.transparent,
                               ),

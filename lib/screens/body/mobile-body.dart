@@ -13,10 +13,9 @@ class MobileBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MobileNavbar(),
-      // endDrawer: AppDrawer(
-      //   selectedIndex: widget.pageIndex,
-      //   onItemSelected: widget.onItemSelected,
-      // ),
+      endDrawer: AppDrawer(
+        selectedPage: selectedPage
+      ),
       body: page
     );
   }

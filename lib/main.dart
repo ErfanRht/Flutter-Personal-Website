@@ -15,15 +15,15 @@ import 'package:personal_web/screens/pages/skills/skills.dart';
 import 'package:personal_web/screens/pages/skills/skills_mobile.dart';
 
 void main() {
+  // ignore: unused_local_variable
+  MainController mainController = Get.put(MainController());
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {  
-  // ignore: unused_local_variable
-  MainController mainController = Get.put(MainController());
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Erfan Rahmati',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
