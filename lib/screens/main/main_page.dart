@@ -3,32 +3,18 @@ import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:personal_web/screens/body/body.dart';
+import 'package:personal_web/screens/body/sections/home/home.dart';
 import 'package:personal_web/screens/body/sections/portfolio/portfolio_mobile.dart';
 import 'package:personal_web/screens/body/sections/skills/skills_mobile.dart';
-import 'package:personal_web/shared/drawer.dart';
-import 'package:personal_web/shared/nav_bar.dart';
-import 'package:personal_web/shared/social_media_bar.dart';
+import 'package:personal_web/screens/shared/drawer.dart';
+import 'package:personal_web/screens/shared/nav_bar.dart';
+import 'package:personal_web/screens/shared/social_media_bar.dart';
 import 'package:personal_web/screens/body/sections/about/about_mobile.dart';
 import 'package:personal_web/screens/body/sections/home/home_mobile.dart';
 
-class MobilePage extends StatefulWidget {
-  final int pageIndex;
-  final void Function(int index) onItemSelected;
-
-  const MobilePage({@required this.pageIndex, this.onItemSelected});
-
-  @override
-  _MobilePageState createState() => _MobilePageState();
-}
-
-class _MobilePageState extends State<MobilePage> {
-  bool isDark;
-  final pages = [
-    HomeSectionMobile(),
-    AboutSectionMobile(),
-    SkillsSectionMobile(),
-    PortfolioSectionMobile(),
-  ];
+class MobilePage extends StatelessWidget {
+  final Widget page;
+  const MobilePage({@required this.page});
 
   @override
   Widget build(BuildContext context) {
@@ -37,26 +23,23 @@ class _MobilePageState extends State<MobilePage> {
     final Brightness brightnessValue =
         MediaQuery.of(context).platformBrightness;
 
-    setState(() => isDark = brightnessValue == Brightness.dark);
     return Scaffold(
       appBar: MobileNavbar(),
-      endDrawer: AppDrawer(
-        selectedIndex: widget.pageIndex,
-        onItemSelected: widget.onItemSelected,
-      ),
-      body: AnimatedSwitcher(
-        duration: kThemeAnimationDuration,
-        child: pages[widget.pageIndex],
-      ),
+      // endDrawer: AppDrawer(
+      //   selectedIndex: widget.pageIndex,
+      //   onItemSelected: widget.onItemSelected,
+      // ),
+      // body: AnimatedSwitcher(
+      //   duration: kThemeAnimationDuration,
+      //   child: pages[widget.pageIndex],
+      // ),
     );
   }
 }
 
 class MainPage extends StatelessWidget {
-  final int pageIndex;
-  final void Function(int index) onItemSelected;
-
-  const MainPage({@required this.pageIndex, this.onItemSelected});
+  final Widget page;
+  const MainPage({@required this.page});
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +60,9 @@ class MainPage extends StatelessWidget {
       body: Stack(
         children: [
           CustomPaint(painter: _BackgroundPainter(), size: Size.infinite),
-          PageBody(pageIndex: pageIndex, onItemSelected: onItemSelected),
+          PageBody(
+            page: page,
+          ),
           Align(alignment: Alignment.centerLeft, child: SocialMediaBar()),
         ],
       ),

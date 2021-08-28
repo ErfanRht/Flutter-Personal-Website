@@ -1,3 +1,10 @@
+import 'package:get/get.dart';
+import 'package:personal_web/constants/routes.dart';
+import 'package:personal_web/controllers/main-controller.dart';
+import 'package:personal_web/screens/body/sections/about/about.dart';
+import 'package:personal_web/screens/body/sections/home/home.dart';
+import 'package:personal_web/screens/body/sections/portfolio/portfolio.dart';
+import 'package:personal_web/screens/body/sections/skills/skills.dart';
 import 'package:personal_web/screens/responsive/layout_wrapper.dart';
 import 'package:flutter/material.dart';
 
@@ -6,16 +13,31 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  MainController mainController = Get.put(MainController());
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Erfan Rahmati',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.teal,
         fontFamily: 'Ubuntu',
       ),
-      home: LayoutWrapper(),
+      initialRoute: HomeRoute,
+      routes: {
+        HomeRoute: (context) => LayoutWrapper(
+              page: HomeSection(),
+            ),
+        AboutRoute: (context) => LayoutWrapper(
+              page: AboutSection(),
+            ),
+        SkillsRoute: (context) => LayoutWrapper(
+              page: SkillsSection(),
+            ),
+        PortfolioRoute: (context) => LayoutWrapper(
+              page: PortfolioSection(),
+            ),
+      },
     );
   }
 }

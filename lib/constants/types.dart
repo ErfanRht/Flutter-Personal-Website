@@ -1,0 +1,1 @@
+enum SelectedPage { HOME, ABOUT, SKILLS, PORTFOLIO, RESUME }

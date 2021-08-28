@@ -5,9 +5,12 @@
   <base href="/">
 
   <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="keywords" content="Erfan, Rahmati, Erfan Rahmati, Erfan Rahmati personal website, ErfanRht, Flutter Developer, Mobile & Web Developer">
-  <meta name="description" content="Erfan Rahmati's personal website.">
+  <meta name="description" content="Full-stack mobile developer💻">
+  <meta name="keywords" content="Erfan, Rahmati, ErfanRht, Erfan Rahmati">
+  <meta name="author" content="Erfan Rahmati">
+  <title>Erfan Rahmati</title>
+  <script defer src="index.dart.js" type="application/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="spinkit.css"> 
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -47,17 +50,65 @@
 
   <title>Erfan Rahmati</title>
   <link rel="manifest" href="manifest.json">
+
+  <style>
+      .loading {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+      }
+
+      .loader {
+          border: 16px solid #f3f3f3;
+          border-radius: 50%;
+          border-top: 16px solid blue;
+          border-right: 16px solid green;
+          border-bottom: 16px solid red;
+          border-left: 16px solid pink;
+          width: 60px;
+          height: 60px;
+          -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+      }
+
+      @-webkit-keyframes spin {
+          0% {
+              -webkit-transform: rotate(0deg);
+          }
+
+          100% {
+              -webkit-transform: rotate(360deg);
+          }
+      }
+
+      @keyframes spin {
+          0% {
+              transform: rotate(0deg);
+          }
+
+          100% {
+              transform: rotate(360deg);
+          }
+      }
+  </style>
 </head>
 
 <body>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('flutter-first-frame', function () {
-        navigator.serviceWorker.register('flutter_service_worker.js');
-      });
-    }
-  </script>
-  <script src="main.dart.js" type="application/javascript"></script>
+  <div class="loading">
+    <div class="sk-folding-cube">
+        <div class="sk-cube1 sk-cube"></div>
+        <div class="sk-cube2 sk-cube"></div>
+        <div class="sk-cube4 sk-cube"></div>
+        <div class="sk-cube3 sk-cube"></div>
+    </div>
+  </div>
+    <script src="main.dart.js" type="application/javascript"></script>
 </body>
 
 </html>

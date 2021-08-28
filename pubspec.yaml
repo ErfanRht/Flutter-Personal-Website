@@ -15,7 +15,9 @@ dependencies:
   cupertino_icons: ^1.0.0
   url_launcher: ^5.7.10
   ms_undraw: ^3.0.0+0
-س  page_transition: ^1.1.7+6
+  get: ^4.3.8
+  flutter_spinkit: ^5.0.0
+  page_transition: ^1.1.7+6
 
 dev_dependencies:
   flutter_test:
@@ -27,7 +29,6 @@ flutter:
   assets:
     - assets/resume/
     - assets/images/logo/
-
 
   fonts:
     - family: MySocialIcons

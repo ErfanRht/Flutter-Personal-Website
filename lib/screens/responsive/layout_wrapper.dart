@@ -2,32 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:personal_web/screens/responsive/screen_type_layout.dart';
 import 'package:personal_web/screens/main/main_page.dart';
 
-class LayoutWrapper extends StatefulWidget {
-  @override
-  _LayoutWrapperState createState() => _LayoutWrapperState();
-}
-
-class _LayoutWrapperState extends State<LayoutWrapper> {
-  int currentPage = 0;
-
-  void onItemSelected(int index) {
-    if (mounted) {
-      setState(() {
-        currentPage = index;
-      });
-    }
-  }
-
+class LayoutWrapper extends StatelessWidget {
+  Widget page;
+  LayoutWrapper({@required this.page});
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
       mobile: MobilePage(
-        pageIndex: currentPage,
-        onItemSelected: onItemSelected,
+        page: page,
       ),
       tablet: MainPage(
-        pageIndex: currentPage,
-        onItemSelected: onItemSelected,
+        page: page,
       ),
     );
   }
