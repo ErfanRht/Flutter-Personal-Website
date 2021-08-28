@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:personal_web/models/models/typewriter.dart';
+import 'package:personal_web/models/typewriter.dart';
 
 class SkillBox extends StatefulWidget {
   final String name;

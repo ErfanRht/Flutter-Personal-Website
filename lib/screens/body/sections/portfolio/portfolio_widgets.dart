@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:personal_web/models/models/typewriter.dart';
+import 'package:personal_web/models/typewriter.dart';
 import 'package:personal_web/screens/body/sections/portfolio/portfolio_box.dart';
 
 class PortfolioManImage extends StatelessWidget {

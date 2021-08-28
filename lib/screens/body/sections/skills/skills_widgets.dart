@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:ms_undraw/ms_undraw.dart';
-import 'package:personal_web/models/models/typewriter.dart';
+import 'package:personal_web/models/typewriter.dart';
 import 'package:personal_web/screens/body/sections/skills/skill_box.dart';
 
 class SkillsManImage extends StatelessWidget {

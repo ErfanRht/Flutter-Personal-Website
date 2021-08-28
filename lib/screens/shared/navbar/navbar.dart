@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:personal_web/constants/types.dart';
 import 'package:personal_web/controllers/main-controller.dart';
-import 'package:personal_web/models/models/change-page.dart';
-import 'package:personal_web/models/models/url_helper.dart';
+import 'package:personal_web/models/change-page.dart';
+import 'package:personal_web/models/url_helper.dart';
 import 'package:personal_web/screens/shared/navbar/item.dart';
 
 class Navbar extends StatelessWidget {
