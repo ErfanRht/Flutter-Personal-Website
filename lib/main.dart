@@ -6,7 +6,7 @@ import 'package:personal_web/screens/body/sections/about/about.dart';
 import 'package:personal_web/screens/body/sections/home/home.dart';
 import 'package:personal_web/screens/body/sections/portfolio/portfolio.dart';
 import 'package:personal_web/screens/body/sections/skills/skills.dart';
-import 'package:personal_web/screens/responsive/layout_wrapper.dart';
+import 'package:personal_web/models/responsive/layout_wrapper.dart';
 import 'package:flutter/material.dart';
 
 void main() {
