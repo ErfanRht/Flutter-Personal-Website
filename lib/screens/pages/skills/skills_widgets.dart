@@ -10,13 +10,6 @@ class SkillsManImage extends StatelessWidget {
   const SkillsManImage(this.isMobile);
   @override
   Widget build(BuildContext context) {
-    // return Padding(
-    //   padding: EdgeInsets.only(right: isMobile ? 0 : 150),
-    //   child: Image.asset(
-    //     'assets/images/illustration/skills.png',
-    //     height: 450,
-    //   ),
-    // );
     return UnDraw(
       color: kPrimaryColor,
       illustration: UnDrawIllustration.profile,
