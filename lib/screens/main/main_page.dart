@@ -2,15 +2,10 @@
 import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:personal_web/constants/types.dart';
 import 'package:personal_web/screens/body/body.dart';
-import 'package:personal_web/screens/body/sections/home/home.dart';
-import 'package:personal_web/screens/body/sections/portfolio/portfolio_mobile.dart';
-import 'package:personal_web/screens/body/sections/skills/skills_mobile.dart';
-import 'package:personal_web/screens/shared/drawer.dart';
 import 'package:personal_web/screens/shared/nav_bar.dart';
 import 'package:personal_web/screens/shared/social_media_bar.dart';
-import 'package:personal_web/screens/body/sections/about/about_mobile.dart';
-import 'package:personal_web/screens/body/sections/home/home_mobile.dart';
 
 class MobilePage extends StatelessWidget {
   final Widget page;
@@ -39,7 +34,8 @@ class MobilePage extends StatelessWidget {
 
 class MainPage extends StatelessWidget {
   final Widget page;
-  const MainPage({@required this.page});
+  final Pages selectedPage;
+  const MainPage({@required this.page, @required this.selectedPage});
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +58,7 @@ class MainPage extends StatelessWidget {
           CustomPaint(painter: _BackgroundPainter(), size: Size.infinite),
           PageBody(
             page: page,
+            selectedPage: selectedPage,
           ),
           Align(alignment: Alignment.centerLeft, child: SocialMediaBar()),
         ],

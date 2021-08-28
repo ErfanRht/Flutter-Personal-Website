@@ -4,19 +4,19 @@ import 'package:personal_web/constants/routes.dart';
 import 'package:personal_web/constants/types.dart';
 import 'package:personal_web/controllers/main-controller.dart';
 
-changePage(BuildContext context, SelectedPage page) {
+changePage(BuildContext context, Pages page) {
   String pageRoute;
   int pageNum;
-  if (page == SelectedPage.HOME) {
+  if (page == Pages.HOME) {
     pageRoute = HomeRoute;
     pageNum = 0;
-  } else if (page == SelectedPage.ABOUT) {
+  } else if (page == Pages.ABOUT) {
     pageRoute = AboutRoute;
     pageNum = 1;
-  } else if (page == SelectedPage.SKILLS) {
+  } else if (page == Pages.SKILLS) {
     pageRoute = SkillsRoute;
     pageNum = 2;
-  } else if (page == SelectedPage.PORTFOLIO) {
+  } else if (page == Pages.PORTFOLIO) {
     pageRoute = PortfolioRoute;
     pageNum = 3;
   }

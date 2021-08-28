@@ -99,13 +99,13 @@ class _NavbarState extends State<Navbar> {
   @override
   void initState() { 
     super.initState();
-      if (mainController.selectedPage == SelectedPage.HOME) {
+      if (mainController.selectedPage == Pages.HOME) {
             selectedIndex=0;
-  } else if (mainController.selectedPage == SelectedPage.ABOUT) {
+  } else if (mainController.selectedPage == Pages.ABOUT) {
     selectedIndex=1;
-  } else if (mainController.selectedPage == SelectedPage.SKILLS) {
+  } else if (mainController.selectedPage == Pages.SKILLS) {
     selectedIndex=2;
-  } else if (mainController.selectedPage == SelectedPage.PORTFOLIO) {
+  } else if (mainController.selectedPage == Pages.PORTFOLIO) {
     selectedIndex=3;
   }
   }
@@ -165,7 +165,7 @@ class _NavbarState extends State<Navbar> {
                       switch (item) {
                         case 'Home':
                           if (mounted) {
-                            changePage(context, SelectedPage.HOME);
+                            changePage(context, Pages.HOME);
                           }
                           setState(() {
                             selectedIndex = items.indexOf(item);
@@ -173,7 +173,7 @@ class _NavbarState extends State<Navbar> {
                           break;
                         case 'About':
                           if (mounted) {
-                            changePage(context, SelectedPage.ABOUT);
+                            changePage(context, Pages.ABOUT);
                           }
                           setState(() {
                             selectedIndex = items.indexOf(item);
@@ -181,7 +181,7 @@ class _NavbarState extends State<Navbar> {
                           break;
                         case 'Skills':
                           if (mounted) {
-                            changePage(context, SelectedPage.SKILLS);
+                            changePage(context, Pages.SKILLS);
                           }
                           setState(() {
                             selectedIndex = items.indexOf(item);
@@ -189,7 +189,7 @@ class _NavbarState extends State<Navbar> {
                           break;
                         case 'Portfolio':
                           if (mounted) {
-                            changePage(context, SelectedPage.PORTFOLIO);
+                            changePage(context, Pages.PORTFOLIO);
                           }
                           setState(() {
                             selectedIndex = items.indexOf(item);

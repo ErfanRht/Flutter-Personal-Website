@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:personal_web/constants/routes.dart';
+import 'package:personal_web/constants/types.dart';
 import 'package:personal_web/controllers/main-controller.dart';
 import 'package:personal_web/screens/body/sections/about/about.dart';
 import 'package:personal_web/screens/body/sections/home/home.dart';
@@ -27,15 +28,19 @@ class MyApp extends StatelessWidget {
       routes: {
         HomeRoute: (context) => LayoutWrapper(
               page: HomeSection(),
+                selectedPage: Pages.HOME,
             ),
         AboutRoute: (context) => LayoutWrapper(
               page: AboutSection(),
+              selectedPage: Pages.ABOUT,
             ),
         SkillsRoute: (context) => LayoutWrapper(
               page: SkillsSection(),
+              selectedPage: Pages.SKILLS,
             ),
         PortfolioRoute: (context) => LayoutWrapper(
               page: PortfolioSection(),
+              selectedPage: Pages.PORTFOLIO,
             ),
       },
     );
