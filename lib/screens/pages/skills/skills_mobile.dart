@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:personal_web/screens/body/sections/skills/skills_widgets.dart';
+import 'package:personal_web/constants/colors.dart';
+import 'package:personal_web/screens/pages/skills/skills_widgets.dart';
 
 class SkillsSectionMobile extends StatelessWidget {
   @override
@@ -14,7 +15,7 @@ class SkillsSectionMobile extends StatelessWidget {
           children: [
             SkillsManImage(true),
             SizedBox(height: 32),
-            SkillsContent(color: Colors.teal, isMobile: true),
+            SkillsContent(color: kPrimaryColor, isMobile: true),
           ],
         ),
       ),

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:personal_web/screens/body/sections/portfolio/portfolio_widgets.dart';
+import 'package:personal_web/constants/colors.dart';
+import 'package:personal_web/screens/pages/about/about_widgets.dart';
 
-class PortfolioSectionMobile extends StatelessWidget {
+class AboutSectionMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -12,9 +13,9 @@ class PortfolioSectionMobile extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            PortfolioManImage(true),
+            Image.asset('assets/images/illustration/about.png'),
             SizedBox(height: 32),
-            PortfolioContent(color: Colors.teal, isMobile: true),
+            AboutContent(color: kPrimaryColor, isMobile: true),
           ],
         ),
       ),

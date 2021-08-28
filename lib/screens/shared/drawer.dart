@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_web/constants/colors.dart';
 import 'package:personal_web/screens/shared/nav_bar.dart';
 import 'package:personal_web/models/url_helper.dart';
 
@@ -41,7 +42,7 @@ class _AppDrawerState extends State<AppDrawer> {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Colors.teal,
+        color: kPrimaryColor,
         child: Stack(
           alignment: Alignment.center,
           children: [

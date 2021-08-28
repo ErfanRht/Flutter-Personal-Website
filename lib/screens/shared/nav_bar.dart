@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:personal_web/constants/colors.dart';
 import 'package:personal_web/constants/types.dart';
 import 'package:personal_web/controllers/main-controller.dart';
 import 'package:personal_web/models/change-page.dart';
@@ -19,7 +20,7 @@ class MobileNavbar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       actions: [
         IconButton(
-          color: Colors.teal,
+          color: kPrimaryColor,
           highlightColor: Colors.transparent,
           hoverColor: Colors.transparent,
           splashColor: Colors.transparent,
@@ -34,7 +35,7 @@ class MobileNavbar extends StatelessWidget implements PreferredSizeWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           CircleAvatar(
-              backgroundColor: Colors.teal,
+              backgroundColor: kPrimaryColor,
               radius: 15,
               child: Image.asset(
                 'assets/images/logo/logo.png',
@@ -56,7 +57,7 @@ class MobileNavbar extends StatelessWidget implements PreferredSizeWidget {
                 TextSpan(
                   text: 'Rahmati',
                   style: textStyle.copyWith(
-                    color: Colors.teal,
+                    color: kPrimaryColor,
                     fontSize: 18,
                     fontFamily: 'Ubuntu',
                   ),
@@ -124,7 +125,7 @@ class _NavbarState extends State<Navbar> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   CircleAvatar(
-                      backgroundColor: Colors.teal,
+                      backgroundColor: kPrimaryColor,
                       radius: 15,
                       child: Image.asset(
                         'assets/images/logo/logo.png',
@@ -145,7 +146,7 @@ class _NavbarState extends State<Navbar> {
                         TextSpan(
                           text: 'Rahmati',
                           style: textStyle.copyWith(
-                            color: Colors.teal,
+                            color: kPrimaryColor,
                             fontSize: 18,
                             fontFamily: 'Ubuntu',
                           ),
@@ -285,12 +286,12 @@ class _ResumeButtonState extends State<ResumeButton> {
         decoration: BoxDecoration(
           border: Border.all(color: Colors.white, width: 2),
           borderRadius: BorderRadius.all(Radius.circular(30)),
-          color: hovered ? Colors.white.withOpacity(0.92) : Colors.teal,
+          color: hovered ? Colors.white.withOpacity(0.92) : kPrimaryColor,
         ),
         child: AnimatedDefaultTextStyle(
           duration: kThemeAnimationDuration,
           style: TextStyle(
-            color: hovered ? Colors.teal : Colors.white,
+            color: hovered ? kPrimaryColor : Colors.white,
             fontSize: 17,
             fontWeight: FontWeight.w500,
             fontFamily: 'Ubuntu',

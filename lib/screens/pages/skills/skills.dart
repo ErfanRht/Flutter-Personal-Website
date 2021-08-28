@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:personal_web/screens/body/sections/skills/skills_widgets.dart';
+import 'package:personal_web/screens/pages/skills/skills_widgets.dart';
 
 class SkillsSection extends StatefulWidget {
   @override

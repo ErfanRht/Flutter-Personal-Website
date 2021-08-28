@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:personal_web/screens/body/sections/home/home_widgets.dart';
+import 'package:personal_web/constants/colors.dart';
+import 'package:personal_web/screens/pages/home/home_widgets.dart';
 
 class HomeSectionMobile extends StatelessWidget {
   @override
@@ -13,8 +14,8 @@ class HomeSectionMobile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             HeroImage(
-              backgroundColor: Colors.teal,
-              widgetColor: Colors.teal,
+              backgroundColor: kPrimaryColor,
+              widgetColor: kPrimaryColor
             ),
             SizedBox(height: 32),
             Introduction(),

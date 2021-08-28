@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:personal_web/screens/body/sections/portfolio/portfolio_widgets.dart';
+import 'package:personal_web/screens/pages/portfolio/portfolio_widgets.dart';
 
 class PortfolioSection extends StatefulWidget {
   @override

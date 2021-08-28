@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_web/constants/colors.dart';
 import 'package:personal_web/models/typewriter.dart';
 import 'package:personal_web/models/url_helper.dart';
 
@@ -35,7 +36,7 @@ class _IntroductionState extends State<Introduction>
             "Hey! I'm...",
             animate: !helloSeen,
             textStyle: TextStyle(
-              color: Colors.teal,
+              color: kPrimaryColor,
               fontSize: 24,
               fontWeight: FontWeight.w700,
               letterSpacing: 1.4,
@@ -153,14 +154,14 @@ class __HireMeButtonState extends State<_HireMeButton> {
         duration: kThemeAnimationDuration,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          border: Border.all(width: 1.4, color: Colors.teal),
+          border: Border.all(width: 1.4, color: kPrimaryColor),
           borderRadius: BorderRadius.all(Radius.circular(50)),
-          color: hovered ? Colors.teal.withOpacity(1.0) : Colors.transparent,
+          color: hovered ? kPrimaryColor.withOpacity(1.0) : Colors.transparent,
         ),
         child: AnimatedDefaultTextStyle(
           duration: kThemeAnimationDuration,
           style: TextStyle(
-            color: hovered ? Colors.white : Colors.teal,
+            color: hovered ? Colors.white : kPrimaryColor,
             fontSize: 17,
             fontWeight: FontWeight.w500,
             fontFamily: 'Ubuntu',

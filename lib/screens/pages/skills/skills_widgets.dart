@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:ms_undraw/ms_undraw.dart';
+import 'package:personal_web/constants/colors.dart';
 import 'package:personal_web/models/typewriter.dart';
-import 'package:personal_web/screens/body/sections/skills/skill_box.dart';
+import 'package:personal_web/screens/pages/skills/skill_box.dart';
 
 class SkillsManImage extends StatelessWidget {
   final bool isMobile;
@@ -17,16 +18,16 @@ class SkillsManImage extends StatelessWidget {
     //   ),
     // );
     return UnDraw(
-      color: Colors.teal,
+      color: kPrimaryColor,
       illustration: UnDrawIllustration.profile,
       placeholder: Text(
         "Illustration is loading...",
         style: TextStyle(
-          color: Colors.teal,
+          color:kPrimaryColor,
           fontSize: 20,
         ),
       ),
-      errorWidget: Icon(Icons.error_outline, color: Colors.teal, size: 50),
+      errorWidget: Icon(Icons.error_outline, color: kPrimaryColor, size: 50),
     );
   }
 }

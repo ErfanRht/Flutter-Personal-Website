@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ms_undraw/ms_undraw.dart';
+import 'package:personal_web/constants/colors.dart';
 import 'package:personal_web/models/typewriter.dart';
 
 class AboutManImage extends StatelessWidget {
@@ -7,16 +8,16 @@ class AboutManImage extends StatelessWidget {
   Widget build(BuildContext context) {
     // return Image.asset('assets/images/illustration/about.png');
     return UnDraw(
-      color: Colors.teal,
+      color: kPrimaryColor,
       illustration: UnDrawIllustration.programming,
       placeholder: Text(
         "Illustration is loading...",
         style: TextStyle(
-          color: Colors.teal,
+          color: kPrimaryColor,
           fontSize: 20,
         ),
       ),
-      errorWidget: Icon(Icons.error_outline, color: Colors.teal, size: 50),
+      errorWidget: Icon(Icons.error_outline, color: kPrimaryColor, size: 50),
     );
   }
 }

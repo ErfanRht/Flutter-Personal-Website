@@ -21,7 +21,5 @@ changePage(BuildContext context, Pages page) {
     pageNum = 3;
   }
   Get.find<MainController>().updatePage(page: page, pageNum: pageNum);
-  Get.offAndToNamed(
-    pageRoute,
-  );
+  Navigator.pushReplacementNamed(context, pageRoute);
 }
